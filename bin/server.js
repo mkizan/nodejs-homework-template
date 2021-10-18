@@ -9,7 +9,3 @@ mongoose.connect(DB_HOST).then(() => app.listen(PORT), console.log('Database con
   console.log(error.message)
   process.exit(1)
 })
-
-// app.listen(PORT, () => {
-//   console.log(`Server running. Use our API on port: ${PORT}`)
-// })

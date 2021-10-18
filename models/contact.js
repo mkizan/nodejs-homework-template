@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose')
+const { Schema, model, SchemaTypes } = require('mongoose')
 const Joi = require('joi')
 
 const contactSchema = Schema({
@@ -21,6 +21,10 @@ const contactSchema = Schema({
   favorite: {
     type: Boolean,
     default: false
+  },
+  owner: {
+    type: SchemaTypes.ObjectId,
+    ref: 'user'
   }
 })
 
@@ -32,7 +36,3 @@ module.exports = {
   Contact,
   joiSchema
 }
-
-// 1) схема (описание типов данных, похоже на PropTypes)
-// 2) модель (создание обьекта)
-// 3) запрос через async/await
